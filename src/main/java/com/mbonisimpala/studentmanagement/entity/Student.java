@@ -20,6 +20,7 @@ public class Student {
     @NonNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
+    @NonNull
     @Column(name = "middle_name")
     private String middleName;
     @NonNull
