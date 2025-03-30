@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "6e7fe03a-ee97-43f3-96af-8672cd4114ac",
+		"name": "student-management",
+		"description": "Contains all the requests needed to test the student management **REST API**.\n\n_Author :_ _Mbonisi Mpala_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42403492"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mbonisi\",\r\n    \"lastName\": \"Mpala\",\r\n    \"birthDate\": \"2001-12-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/student"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/student/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/student/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/student/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Introduction to Physics\",\r\n    \"code\": \"PHY-1090\",\r\n    \"description\": \"Introduction to the laws of science that govern the way nature behaves.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/course"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/course/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/course/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/course/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Grade",
+			"item": [
+				{
+					"name": "Create Grade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grade\": \"5.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/grade/student/1/course/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Grade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/grade/student/1/course/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Student Grades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/grade/student/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Course Grades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/grade/course/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Grades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/grade/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Grade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grade\": \"C-\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/grade/student/1/course/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Grade",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/grade/student/1/course/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
