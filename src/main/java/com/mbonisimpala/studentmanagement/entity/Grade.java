@@ -1,5 +1,6 @@
 package com.mbonisimpala.studentmanagement.entity;
 
+import com.mbonisimpala.studentmanagement.validation.ValidGrade;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,10 +15,13 @@ import javax.persistence.*;
         @UniqueConstraint(columnNames = {"student_id", "course_id"})
 })
 public class Grade {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
+
+    @ValidGrade // custom annotation from grade validation
     @Column(name = "grade", nullable = false)
     private String grade;
 

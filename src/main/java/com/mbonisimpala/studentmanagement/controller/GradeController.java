@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,12 +22,12 @@ public class GradeController {
     }
 
     @PostMapping("/student/{studentId}/course/{courseId}")
-    public ResponseEntity<Grade> saveGrade(@RequestBody Grade grade, @PathVariable Long studentId, @PathVariable Long courseId){
+    public ResponseEntity<Grade> saveGrade(@RequestBody @Valid Grade grade, @PathVariable Long studentId, @PathVariable Long courseId){
         return new ResponseEntity<>(gradeService.saveGrade(grade, studentId, courseId), HttpStatus.CREATED);
     }
 
     @PutMapping("/student/{studentId}/course/{courseId}")
-    public ResponseEntity<Grade> updateGrade(@RequestBody Grade grade, @PathVariable Long studentId, @PathVariable Long courseId){
+    public ResponseEntity<Grade> updateGrade(@RequestBody @Valid Grade grade, @PathVariable Long studentId, @PathVariable Long courseId){
         return new ResponseEntity<>(gradeService.updateGrade(grade.getGrade(), studentId, courseId), HttpStatus.OK);
     }
 

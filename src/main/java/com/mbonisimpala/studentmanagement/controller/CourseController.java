@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<Course> saveCourse(@RequestBody Course course){
+    public ResponseEntity<Course> saveCourse(@RequestBody @Valid Course course){
         return new ResponseEntity<>(courseService.saveCourse(course), HttpStatus.CREATED);
     }
 
