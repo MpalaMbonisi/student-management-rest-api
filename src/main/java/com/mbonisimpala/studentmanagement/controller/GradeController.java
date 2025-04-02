@@ -44,7 +44,7 @@ public class GradeController {
 
     @GetMapping("/course/{courseId}")
     public ResponseEntity<List<Grade>> getCourseGrades(@PathVariable Long courseId){
-        return new ResponseEntity<>(gradeService.getAllCourseGrade(courseId), HttpStatus.OK);
+        return new ResponseEntity<>(gradeService.getAllCourseGrades(courseId), HttpStatus.OK);
     }
 
     @GetMapping("/all")

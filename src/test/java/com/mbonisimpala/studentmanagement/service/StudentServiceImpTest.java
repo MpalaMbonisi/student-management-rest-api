@@ -76,20 +76,20 @@ class StudentServiceImpTest {
     @Test
     public void getAllStudents_ExistingStudents_ShouldReturnStudentList(){
         // Arrange
-        List<Student> mockStudents = List.of(new Student[]{
+        List<Student> studentsList = List.of(new Student[]{
                 new Student("Mbonisi", "", "Mpala", LocalDate.parse("2001-12-16"), "Zimbabwe"),
                 new Student("Piotr", "Kamil", "Kowalski", LocalDate.parse("2006-05-20"), "Poland"),
                  new Student("Agata", "Olga", "Duda", LocalDate.parse("2000-01-01"), "Ukraine")
         });
 
-        when(studentRepository.findAll()).thenReturn(mockStudents);
+        when(studentRepository.findAll()).thenReturn(studentsList);
 
         // Act
         List<Student> results = studentService.getAllStudents();
 
         // Assert
-        Assertions.assertEquals(mockStudents.size(), results.size());
-        Assertions.assertEquals(mockStudents, results);
+        Assertions.assertEquals(studentsList.size(), results.size());
+        Assertions.assertEquals(studentsList, results);
     }
 
     @Test

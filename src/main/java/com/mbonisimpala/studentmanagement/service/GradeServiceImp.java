@@ -59,7 +59,7 @@ public class GradeServiceImp implements GradeService{
     }
 
     @Override
-    public List<Grade> getAllCourseGrade(Long courseId) {
+    public List<Grade> getAllCourseGrades(Long courseId) {
         return gradeRepository.findByCourseId(courseId);
     }
 
