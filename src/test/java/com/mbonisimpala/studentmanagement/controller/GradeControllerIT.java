@@ -155,8 +155,8 @@ public class GradeControllerIT {
     @Test
     public void shouldReturnGrade_whenGettingValidGrade() throws Exception{
         // Given
-        Grade grade = gradeService.saveGrade( new Grade(1L, "5.0", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+        gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
+                savedStudent.getId(), savedCourse.getId());
 
         // When
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/grade/student/" + savedStudent.getId() + "/course/" + savedCourse.getId());
@@ -164,7 +164,7 @@ public class GradeControllerIT {
         // Perform & verify
         mockMvc.perform(request)
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.grade").value("5.0"));
+                .andExpect(jsonPath("$.grade").value("4.5"));
     }
 
     @Test
@@ -189,7 +189,7 @@ public class GradeControllerIT {
     public void shouldReturnGrade_whenUpdatingExistingGrade() throws Exception{
         // Given ( Existing Grade )
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
         // When
 
@@ -230,7 +230,7 @@ public class GradeControllerIT {
     public void shouldReturnBadRequest_whenUpdatingWithInvalidGrade() throws Exception{
         // Given ( Existing Grade )
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
         // When
         // Build JSON body
@@ -251,7 +251,7 @@ public class GradeControllerIT {
     public void shouldReturnNoContent_whenDeletingExistingGrade() throws Exception{
         // Given (existing grade)
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
         // When
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.delete("/grade/student/1/course/1");
@@ -277,7 +277,7 @@ public class GradeControllerIT {
     public void shouldReturnGradesList_whenGettingExistingStudentGrades() throws Exception{
         // Given ( existing student grades )
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
 
         // When
@@ -296,7 +296,7 @@ public class GradeControllerIT {
     public void shouldReturnGradeList_whenGettingExistingCourseGrades() throws Exception{
         //  Given
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
         // When
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
@@ -314,7 +314,7 @@ public class GradeControllerIT {
     public void shouldReturnGradeList_whenGettingAllGrades() throws Exception{
         //  Given
         gradeService.saveGrade( new Grade(1L, "4.5", savedCourse, savedStudent),
-                savedCourse.getId(), savedStudent.getId());
+                savedStudent.getId(), savedCourse.getId());
 
         // When
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/grade/all");
