@@ -33,10 +33,9 @@ public class StudentManagementApplication implements CommandLineRunner {
                 new Student("Robert","", "Lewandowksi", LocalDate.parse("2004-12-30"), "Poland"),
                 new Student("Agata", "Olga", "Duda", LocalDate.parse("2000-01-01"), "Ukraine")
         });
-        studentRepository.saveAll(students);
+        // studentRepository.saveAll(students);
 
         Iterable<Course> courses = List.of(new Course[] {
-                new Course("Data Structures and Algorithms", "CS201", "Fundamental concepts of data organization and problem-solving techniques."),
                 new Course("Operating Systems", "CS301", "Introduction to process management, memory management, and file systems."),
                 new Course("Computer Networks", "CS302", "Basic principles of networking, including protocols, TCP/IP, and network security."),
                 new Course("Database Management Systems", "CS303", "Concepts of relational databases, SQL, and data modeling."),
@@ -44,6 +43,6 @@ public class StudentManagementApplication implements CommandLineRunner {
                 new Course("Cybersecurity Fundamentals", "CS305", "Introduction to cybersecurity concepts, encryption, and threat mitigation.")
         });
 
-        courseRepository.saveAll(courses);
+        // courseRepository.saveAll(courses);
     }
 }

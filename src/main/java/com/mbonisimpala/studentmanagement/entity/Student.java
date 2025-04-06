@@ -37,7 +37,7 @@ public class Student {
 
     @NonNull
     @Column(name = "birth_date", nullable = false)
-    @Past(message = "The birth dae must be in the past")// verify the date input
+    @Past(message = "The birth day must be in the past")// verify the date input
     private LocalDate birthDate;
 
     @NonNull
