@@ -74,6 +74,37 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <!-- SureFire Plugin: runs unit tests !-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>  <!-- Run unit tests -->
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Failsafe Plugin: runs integration tests  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>   <!-- Run integration tests -->
+                            <goal>verify</goal>             <!-- Verify the results -->
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.java</include>    <!-- Run integration tests -->
+                    </includes>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
     
