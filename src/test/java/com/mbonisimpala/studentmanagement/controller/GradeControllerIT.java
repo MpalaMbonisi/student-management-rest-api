@@ -207,7 +207,7 @@ public class GradeControllerIT {
     }
 
     @Test
-    public void shouldReturnBadRequest_whenUpdatingExistentIDs() throws Exception{
+    public void shouldReturnBadRequest_whenUpdatingNonExistentIDs() throws Exception{
         // Given (Non-existent student and course IDs)
         long studentId = 999L;
         long courseId = 999L;
