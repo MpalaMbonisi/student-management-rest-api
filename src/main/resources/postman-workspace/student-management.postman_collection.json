@@ -216,6 +216,90 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Update with Invalid Student and Course IDs",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\": \"5.0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/grade/student/10/course/10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"grade",
+										"student",
+										"10",
+										"course",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update with Invalid Grade",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\": \"C-\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/grade/student/1/course/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"grade",
+										"student",
+										"1",
+										"course",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade With Invalid Student and Course IDs",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/grade/student/10/course/10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"grade",
+										"student",
+										"10",
+										"course",
+										"10"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
